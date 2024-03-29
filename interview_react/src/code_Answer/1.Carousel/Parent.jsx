@@ -2,17 +2,15 @@ import React, { useState } from 'react'
 import { CAROUSEL_IMG } from '../../utils/constants'
 const Parent = () => {
   const [img, setImg] = useState(CAROUSEL_IMG)
-  const [change, setChange] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(0)
 
-  const handleClick = (dir) =>{
-    if(dir == "left"){
-      if(change > 0) setChange(change - 1); 
-      // else return
-    }
-    if(dir == "right"){
-      if(change < 2) setChange(change + 1);
-      else return;
-    }
+  const handlePreviousClick = () =>{
+    setActiveIndex(!activeIndex ? img.length - 1 : activeIndex - 1);
+  }
+
+  const handleNextClick = () => {
+    setActiveIndex((activeIndex + 1)% img.length);
+    console.log(activeIndex);
   }
 
 
@@ -24,13 +22,13 @@ const Parent = () => {
      <div className=''>
      <div className='flex max-w-lg mx-auto justify-between items-center'>
         <div>
-          <button onClick={()=> handleClick("left")} className='px-6 py-2 bg-black text-white rounded-lg'>&lt;</button>
+          <button onClick={handlePreviousClick} className='px-6 py-2 text-4xl rounded-lg'>&lt;</button>
         </div>
         <div>
-          <img src={img[change]} alt="" />
+          <img src={img[activeIndex]} className='h-[300px] rounded-xl object-contain' alt="" />
         </div>
         <div>
-        <button onClick={()=> handleClick("right")} className='px-6 py-2 bg-black text-white rounded-lg'>&gt;</button>
+        <button onClick={handleNextClick} className='px-6 py-2  text-4xl rounded-lg'>&gt;</button>
         </div>
       </div>
      </div>
