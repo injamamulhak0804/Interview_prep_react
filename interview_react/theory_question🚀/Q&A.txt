@@ -1,0 +1,50 @@
+1. What is the difference between state and prop.
+    - To manage data inside component we use state.
+    - Props is way to pass a data from the parent component to child component it is read only.
+
+2. What are  the way to create project in react ?
+    - using create react app
+    - or using a vite 
+    - there are many other way to create a project for react.
+
+3. what does the create react app do ?
+    - The create react app is a tool that is used to set up our react project very quickly 
+    it provides a folder structure, building configuration and so on rather than focusing on
+    developing a evironment developers can mainly focus on code.
+
+4. what is bundlers ?
+    - Bundlers are used to combine multiple files like a HTML, JS, CSS folder into fewer file and 
+    it make our project more optimize and improve performance and it's also used to create a build 
+    folder inside a react. bundlers like: parcel, webpack, Rollup etc...
+
+5. What is  node modules ?
+    - node modules is folder that contain all the packages and dependencies that are required by our project.
+
+6. What is component ?
+    - A component is resuseable peice of code that contain HTML, JS, CSS and other components,
+    - In react there are two types of component are functional based component and class based component.
+
+7. what is functional based component ?
+    - A functional based component are normal JS function that return some piece so JSX.
+
+8. What is JSX ? 
+    - JSX is a javascript XML so you write HTML -like markup inside a js file also there are other way to write
+    a component inside a react component.
+
+8. JSX is that HTMl ? 
+    - No, it's not HTML is HTML like structure
+    - It's different from HTML.
+    - JSX is HTML like Syntax.
+
+9. What is utility funtion ?
+    - utility function is a simply function used to perform some sepcific task and it makes our code more reusable, clear, understandable.
+
+10. what is Hooks ?
+    - Hooks are  the utility function to create special variable and  that are only used in the functional component without 
+    the need of a class component.
+
+11. Is that hooks variable are different from normal variable ?
+    - yes it is different normal variable assignment, you can create a state variable when you need a dynamic variable.
+
+12. 
+

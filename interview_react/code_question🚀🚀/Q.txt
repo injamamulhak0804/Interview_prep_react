@@ -1,0 +1,5 @@
+Answer for the code is "./src/code_answer"
+
+1. Make a carousel ?
+    - make a hardcode image get image from google not from any API or something.
+    - just Build it !!🚀
