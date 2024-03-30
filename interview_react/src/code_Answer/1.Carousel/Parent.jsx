@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CAROUSEL_IMG } from '../../utils/constants'
 const Parent = () => {
-  const [img, setImg] = useState(CAROUSEL_IMG)
+
+  const [img] = useState(CAROUSEL_IMG)
   const [activeIndex, setActiveIndex] = useState(0)
 
   const handlePreviousClick = () =>{
@@ -10,8 +11,12 @@ const Parent = () => {
 
   const handleNextClick = () => {
     setActiveIndex((activeIndex + 1)% img.length);
-    console.log(activeIndex);
   }
+
+  useEffect(()=>{
+    const i = setTimeout(()=>{handleNextClick()},3000)
+    return () =>{clearInterval(i)}
+  },[activeIndex])
 
 
   return (
@@ -25,7 +30,10 @@ const Parent = () => {
           <button onClick={handlePreviousClick} className='px-6 py-2 text-4xl rounded-lg'>&lt;</button>
         </div>
         <div>
-          <img src={img[activeIndex]} className='h-[300px] rounded-xl object-contain' alt="" />
+          {/* <img src={img[activeIndex]} className='h-[300px] rounded-xl object-contain' alt="" /> For a better way ⬇ this also crct way */}
+          {
+              img.map((image, index)=> <img src={image} key={index} className={'h-[300px] duration-300 ease-in-out rounded-xl object-contain ' +( activeIndex == index ? "block" :"hidden") } alt="" />)
+          }
         </div>
         <div>
         <button onClick={handleNextClick} className='px-6 py-2  text-4xl rounded-lg'>&gt;</button>
